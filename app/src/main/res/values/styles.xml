@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="customPlayPauseButton" parent="@style/Widget.MaterialComponents.Button.TextButton">
+        <item name="rippleColor">#906dd5ed</item>
+        <item name="cornerRadius">180dp</item>
+    </style>
+
+    <style name="customNextAndPreviousButtons" parent="@style/Widget.AppCompat.Button">
+        <item name="android:background">@drawable/shape_of_playpause_button</item>
+        <item name="rippleColor">#906dd5ed</item>
+        <item name="cornerRadius">180dp</item>
+    </style>
+</resources>
