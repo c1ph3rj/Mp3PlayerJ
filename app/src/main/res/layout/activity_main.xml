@@ -102,20 +102,36 @@
         tools:ignore="MissingConstraints">
 
         <TextView
-            android:id="@+id/SongName"
-            android:textColor="@color/black"
+            android:id="@+id/textView"
+            android:textSize="40sp"
+            android:textFontWeight="900"
+            android:textColor="#5433FF"
+            android:gravity="center"
+            android:fontFamily="@font/dancing_script_variable_font_wght"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textSize="30sp" />
+            android:text="@string/title"
+            tools:targetApi="p" />
 
         <LinearLayout
             android:id="@+id/gradientTheme"
             android:layout_width="300dp"
             android:layout_height="300dp"
+            android:gravity="center"
+            android:elevation="50dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/gradient_list"
-            android:orientation="horizontal" />
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/SongName"
+                android:fontFamily="@font/PressStart2P_Regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="30sp" />
+        </LinearLayout>
 
     </LinearLayout>
 
