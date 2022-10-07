@@ -1,3 +1,4 @@
+// Importing Required packages
 package com.c1ph3r.musicplayer;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +16,10 @@ import android.widget.TextView;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.button.MaterialButtonToggleGroup;
 
+
+// Main Activity class.
 public class MainActivity extends AppCompatActivity {
+    //Declaring variables used inside the class.
     MediaPlayer mediaPlayer;
     MaterialButton playPauseBtn;
     int songNo = 0;
@@ -26,9 +30,11 @@ public class MainActivity extends AppCompatActivity {
     String[] songName = {"song_one","song_two","song_three"};
     Thread updateSeekBar;
     ImageButton previous, next;
+    //On create method.
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Initializing the variables declared outside the class.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         seekBar = (SeekBar) findViewById(R.id.seekBar);
@@ -46,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
         animate.setExitFadeDuration(4000);
         animate.setEnterFadeDuration(2000);
         trackTime.setText(updateTime(mediaPlayer.getDuration()));
+
+        // Creating a Thread for seekbar to be updated.
         updateSeekBar = new Thread(){
             @Override
             public void run() {
@@ -58,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
                 super.run();
             }
         };
+
+        //Calling Method for updating the seekbar data to the media player.
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
@@ -75,8 +85,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         seekBar.setMax(mediaPlayer.getDuration());
+        //calling Thread
         updateSeekBar.start();
-
+        //Overriding the Runnable thread using Handler.
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -85,10 +96,11 @@ public class MainActivity extends AppCompatActivity {
                 handler.postDelayed(this,500);
             }
         }, 500);
-
+        // Play pause Toggle button act as a Floating button.
         playPause.addOnButtonCheckedListener(new MaterialButtonToggleGroup.OnButtonCheckedListener() {
             @SuppressLint({"SetTextI18n", "UseCompatLoadingForDrawables"})
             @Override
+            //Method to play or pause the Song.
             public void onButtonChecked(MaterialButtonToggleGroup group, int checkedId, boolean isChecked) {
                 if(isChecked) {
                     animate.start();
@@ -112,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+        //Calling the button method to change the track.
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -143,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
+    //This method is used to update the media player with new song.
     @SuppressLint("NewApi")
     public void setSong(){
         if(mediaPlayer.isPlaying()){
@@ -164,7 +176,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
+    //This Method is used to change the milli seconds to hr and min format.
     public String updateTime(int duration){
         String time = "";
         int min = (duration/1000/60);
