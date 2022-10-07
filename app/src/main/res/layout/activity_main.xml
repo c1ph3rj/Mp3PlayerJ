@@ -37,7 +37,7 @@
             tools:ignore="UselessParent">
 
             <android.widget.ImageButton
-                android:id="@+id/button2"
+                android:id="@+id/previousSong"
                 style="@style/customNextAndPreviousButtons"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
@@ -54,7 +54,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/SongName"
                 app:singleSelection="true"
                 tools:ignore="MissingConstraints">
 
@@ -70,14 +70,14 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.498"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView"
+                    app:layout_constraintTop_toBottomOf="@+id/SongName"
                     app:layout_constraintVertical_bias="0.855"
                     tools:ignore="MissingConstraints" />
 
             </com.google.android.material.button.MaterialButtonToggleGroup>
 
             <android.widget.ImageButton
-                android:id="@+id/button3"
+                android:id="@+id/nextSong"
                 style="@style/customNextAndPreviousButtons"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
@@ -102,7 +102,8 @@
         tools:ignore="MissingConstraints">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/SongName"
+            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
