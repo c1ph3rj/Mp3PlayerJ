@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">musicplayer</string>
-    <string name="title">Music Player</string>
+    <string name="title">MUSIC PLAYER</string>
+    <string name="userTime">00:00</string>
 </resources>

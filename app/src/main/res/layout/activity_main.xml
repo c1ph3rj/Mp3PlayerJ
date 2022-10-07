@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/white"
+    android:background="#127BBC"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
@@ -25,7 +25,35 @@
         <SeekBar
             android:id="@+id/seekBar"
             android:layout_width="300dp"
+            android:background="@drawable/seekbar_background"
             android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <TextView
+            android:id="@+id/userTime"
+                android:textColor="@color/white"
+                android:text="@string/userTime"
+                android:textSize="18sp"
+                android:paddingStart="30dp"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+                tools:ignore="RtlSymmetry" />
+            <TextView
+                android:id="@+id/trackTime"
+                android:textColor="@color/white"
+                android:text="@string/userTime"
+                android:textSize="18sp"
+                android:textAlignment="textEnd"
+                android:paddingEnd="30dp"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/controls"
@@ -33,7 +61,6 @@
             android:layout_height="140dp"
             android:gravity="center"
             android:orientation="horizontal"
-            android:paddingTop="20dp"
             tools:ignore="UselessParent">
 
             <android.widget.ImageButton
@@ -45,12 +72,12 @@
                 android:text="" />
 
             <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/playPause"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:background="@drawable/shape_of_playpause_button"
                 android:gravity="center"
-                android:id="@+id/playPause"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -103,14 +130,18 @@
 
         <TextView
             android:id="@+id/textView"
-            android:textSize="40sp"
-            android:textFontWeight="900"
-            android:textColor="#5433FF"
-            android:gravity="center"
-            android:fontFamily="@font/dancing_script_variable_font_wght"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/dancing_script_variable_font_wght"
+            android:gravity="center"
+            android:shadowColor="@color/black"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="10"
             android:text="@string/title"
+            android:textColor="@color/white"
+            android:textFontWeight="900"
+            android:textSize="40sp"
             tools:targetApi="p" />
 
         <LinearLayout
@@ -119,18 +150,26 @@
             android:layout_height="300dp"
             android:gravity="center"
             android:elevation="50dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:background="@drawable/gradient_list"
+            android:shadowColor="@color/black"
+            android:shadowDx="8"
+            android:shadowDy="8"
+            android:shadowRadius="10"
             android:orientation="horizontal" >
 
             <TextView
                 android:id="@+id/SongName"
-                android:fontFamily="@font/PressStart2P_Regular"
+                android:fontFamily="@font/press_start2_p_regular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="30sp" />
+                android:textColor="@color/white"
+                android:shadowColor="@color/black"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="4"
+                android:textSize="25sp" />
         </LinearLayout>
 
     </LinearLayout>
